@@ -10,7 +10,6 @@ public class ListFilter {
 
 	
 	List<String> list1 = new ArrayList<String>();
-	List<String> list2 = new ArrayList<String>();
 	
 	list1.add("tapioca");
 	list1.add("soja");
@@ -20,13 +19,20 @@ public class ListFilter {
 	list1.add("mairena");
 
 	
-	list1.forEach(str -> {
-		if(str.toLowerCase().contains("o") && str.length() > 5) 
-			list2.add(str);
-		});
+	filter(list1).forEach(str -> System.out.println(str));
 	
-	list2.forEach(str -> System.out.println(str));
+	}
 
+	public static List<String> filter(List<String> list1) {
+			
+		List<String> list2 = new ArrayList<String>();
+		
+		list1.forEach(str -> {
+			if(str.toLowerCase().contains("o") && str.length() > 5) 
+				list2.add(str);
+			});
+
+		return list2;
 	}
 
 }
