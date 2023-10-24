@@ -3,7 +3,7 @@ package n3exercici1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student implements AFilter {
+public class Student {
 	
 	String name = "";
 	int age = 0;
@@ -59,6 +59,24 @@ public class Student implements AFilter {
 	public void filter(List<Student> aList){
 		if(Character.toString(this.name.toLowerCase().charAt(0)).equals("a")) {
 			aList.add(new Student(this.name,this.age,this.course,this.note));
+		}
+	}
+	
+	public void fiveOrMore() {
+		if(this.note >= 5) {
+			System.out.println(this.name);
+		}
+	}
+	
+	public void fiveOrMoreAndNotPhp() {
+		if(this.note >= 5 && !(this.course.equals("php"))) {
+			System.out.println(this.name);
+		}
+	}
+	
+	public void java18() {
+		if(this.age >= 18 && this.course.equals("java")) {
+			System.out.println(this.name);
 		}
 	}
 }

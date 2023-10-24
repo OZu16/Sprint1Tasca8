@@ -21,18 +21,12 @@ public class MainClass {
 		stdList.add(new Student("paula",13,"java",1.2f));
 		stdList.add(new Student("andrea",13,"php	",4.9f));
 		
-		
-		/*stdList.forEach(std -> {
+		System.out.println("noms i edat de tots els alumnes\n");
+		stdList.forEach(std -> {
 			std.showNameAge();
-		});*/
-		/*AFilter f = (l) ->{
-			stdList.forEach(std -> {
-				std.filter(aFilter);
-			});	
-		};
+		});
 		
-		f.filter(stdList);*/
-
+		System.out.println("\nnoms i edat de el alumnes que comencen amb a\n");
 		stdList.forEach(std -> {
 			std.filter(aFilter);
 		});
@@ -40,6 +34,23 @@ public class MainClass {
 		aFilter.forEach(std -> {
 			std.showNameAge();
 		});
+		
+		System.out.println("\nalumnes que tenen una nota igual o superior a 5");
+		stdList.forEach(std -> {
+			std.fiveOrMore();
+		});
+		
+		System.out.println("\nalumnes que tenen una nota igual o superior a 5 i no son del curs de php\n");
+		stdList.forEach(std -> {
+			std.fiveOrMoreAndNotPhp();
+		});
+		
+		System.out.println("\nalumnes majors d'edat");
+		stdList.forEach(std -> {
+			std.java18();
+		});
+	
+		
 	}
 	
 }
